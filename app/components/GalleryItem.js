@@ -19,15 +19,6 @@ export default function GalleryItem({ sid }) {
         const item = sculptureList.find(x => x["id"] == index);
         setSculpture(item);
     }, [sid]);
-    const nexturl = () => {
-        let url = usePathname();
-        if (url === undefined || next_ix === undefined) {
-            console.warn("undefined url");
-        }
-        url = url.substring(0, url.lastIndexOf("/") + 1);
-        return url + next_ix;
-    };
-    const nextUrl = nexturl();
     return (
         <div className="box">
             {sculpture ? (
@@ -36,7 +27,6 @@ export default function GalleryItem({ sid }) {
                     <h2 className="title is-5">
                         <i>{sculpture.name}</i> by {sculpture.artist}
                     </h2>
-                    <a href={nexturl()}>Next</a>
                     <h3 className="subtitle is-6">
                         ({sid} of {sculptureList.length})
                     </h3>
