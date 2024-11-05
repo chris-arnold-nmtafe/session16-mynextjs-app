@@ -7,10 +7,6 @@ import { usePathname } from "next/navigation";
 
 export const runtime = "edge";
 
-function Header({ title }) {
-    return <h1 className="title is-4">{title ? title : "Default title"}</h1>;
-}
-
 export default function GalleryItem({ sid }) {
     const [sculpture, setSculpture] = useState(null);
     const index = parseInt(sid) - 1;
@@ -23,14 +19,14 @@ export default function GalleryItem({ sid }) {
         <div className="box">
             {sculpture ? (
                 <>
-                    <Header title="New Gallery" />
+                    <h1 className="title is-4">{title ? title : "Default title"}</h1>
                     <h2 className="title is-5">
                         <i>{sculpture.name}</i> by {sculpture.artist}
                     </h2>
                     <h3 className="subtitle is-6">
                         ({sid} of {sculptureList.length})
                     </h3>
-                    <Image
+                    <img
                         src={sculpture.url}
                         alt={sculpture.alt}
                         width={400}
