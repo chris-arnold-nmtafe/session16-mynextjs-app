@@ -37,9 +37,6 @@ export default function GalleryItem({ sid }) {
                         <i>{sculpture.name}</i> by {sculpture.artist}
                     </h2>
                     <a href={nexturl()}>Next</a>
-                    <Next href={nextUrl} scroll={false} prefetch>
-                        Next
-                    </Next>
                     <h3 className="subtitle is-6">
                         ({sid} of {sculptureList.length})
                     </h3>
